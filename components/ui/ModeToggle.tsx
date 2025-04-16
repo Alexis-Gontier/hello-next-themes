@@ -15,6 +15,16 @@ import {
 export function ModeToggle() {
   const { setTheme } = useTheme()
 
+  const handleSetLightTheme = () => {
+    setTheme("light")
+  }
+  const handleSetDarkTheme = () => {
+    setTheme("dark")
+  }
+  const handleSetSystemTheme = () => {
+    setTheme("system")
+  }
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -25,13 +35,13 @@ export function ModeToggle() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setTheme("light")} className="cursor-pointer">
+        <DropdownMenuItem onClick={handleSetLightTheme} className="cursor-pointer">
           Light
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")} className="cursor-pointer">
+        <DropdownMenuItem onClick={handleSetDarkTheme} className="cursor-pointer">
           Dark
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")} className="cursor-pointer">
+        <DropdownMenuItem onClick={handleSetSystemTheme} className="cursor-pointer">
           System
         </DropdownMenuItem>
       </DropdownMenuContent>
